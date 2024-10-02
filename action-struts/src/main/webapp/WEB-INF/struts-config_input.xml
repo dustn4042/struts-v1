@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+	<form-bean name ="inputTest" type="com.input.InputForm">
+	<form-property name = "userName" type="java.lang.String"></form-property>
+	<form-property name = "userPwd" type="java.lang.String"></form-property>
+	<form-property name = "userId" type="java.lang.String"></form-property>
+	</form-bean>
+	</form-beans>
+	<global-exceptions></global-exceptions>
+	<global-forwards />
+	<action-mappings>
+		<action path="/inputForm" forward="/input/inputForm.jsp" />
+		<action path="/input" type="com.input.InputAction" name ="inputTest" validate="true" input="/input/inputForm.jsp">
+			<forward name="result" path="/input/resInput.jsp" redirect="false"/>
+		</action>
+	</action-mappings>
+	<message-resources parameter="test" />
+</struts-config>

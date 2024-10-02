@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans />
+	<global-exceptions></global-exceptions>
+	<global-forwards />
+	<action-mappings>
+		<action path="/DataTest1" forward="/form.jsp" />
+		<action path="/data" type="com.data.DataTest1" validate="false">
+			<forward name="result" path="/resInput.jsp" />
+		</action>
+	</action-mappings>
+	<message-resources parameter="test" />
+</struts-config>
